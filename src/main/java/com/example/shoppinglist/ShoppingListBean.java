@@ -33,6 +33,7 @@ public class ShoppingListBean implements Serializable {     // для SessionSco
         items.add(i);
         itemName = null;
         itemQuantity = null;
+        itemUnits = null;
     }
 
     public List<Item> getItems() {

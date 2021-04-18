@@ -22,12 +22,12 @@
             <h:messages id="msg"/>
             <h:inputText id="itemName" value="#{shoppingListBean.itemName}"/>
             <h:inputText id="itemQuantity" value="#{shoppingListBean.itemQuantity}"/>
-            <h:selectOneListbox id="itemUnits" value="#{shoppingListBean.itemUnits}">
+            <h:selectOneMenu id="itemUnits" value="#{shoppingListBean.itemUnits}">
                 <f:selectItem itemLabel="kg" itemValue="kg"/>
                 <f:selectItem itemLabel="liter" itemValue="liter"/>
                 <f:selectItem itemLabel="pack" itemValue="pack"/>
                 <f:selectItem itemLabel="pcs" itemValue="pcs"/>
-            </h:selectOneListbox>
+            </h:selectOneMenu>
             <h:commandButton action="#{shoppingListBean.addItem}" value="Add">
                 <f:ajax execute="itemName itemQuantity itemUnits" render="@form"/>
             </h:commandButton>

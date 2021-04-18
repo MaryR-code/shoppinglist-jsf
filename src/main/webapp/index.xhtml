@@ -16,11 +16,20 @@
             <h:dataTable id="itemsTable" value="#{shoppingListBean.items}" var="i">
                 <h:column>#{i.id}</h:column>
                 <h:column>#{i.name}</h:column>
+                <h:column>#{i.quantity}</h:column>
+                <h:column>#{i.units}</h:column>
             </h:dataTable>
             <h:messages id="msg"/>
-            <h:inputText id="itemValueText" value="#{shoppingListBean.itemName}"/>
+            <h:inputText id="itemName" value="#{shoppingListBean.itemName}"/>
+            <h:inputText id="itemQuantity" value="#{shoppingListBean.itemQuantity}"/>
+            <h:selectOneListbox id="itemUnits" value="#{shoppingListBean.itemUnits}">
+                <f:selectItem itemLabel="kg" itemValue="kg"/>
+                <f:selectItem itemLabel="liter" itemValue="liter"/>
+                <f:selectItem itemLabel="pack" itemValue="pack"/>
+                <f:selectItem itemLabel="pcs" itemValue="pcs"/>
+            </h:selectOneListbox>
             <h:commandButton action="#{shoppingListBean.addItem}" value="Add">
-                <f:ajax execute="itemValueText" render="@form"/>
+                <f:ajax execute="itemName itemQuantity itemUnits" render="@form"/>
             </h:commandButton>
         </h:form>
     </h:body>
